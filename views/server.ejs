@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <title><%= guild.name %></title>
+     <meta name="theme-color" content="<%= hexCode %>" />
+     <link rel="icon" href="<%= guild.iconURL %>" type="image/png" />
+
+      <meta itemprop="name" content="<%= guild.name %> | Discord Server">
+      <meta itemprop="description" content="<%= description %>">
+      <meta itemprop="image" content="<%= guild.iconURL %>">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:url" value="https://bumper-premium.glitch.me/server/<%= guild.id %>" />
+      <meta name="twitter:title" content="<%= guild.name %> | Discord Server" />
+      <meta name="twitter:description" content="<%= description %>" />
+      <meta name="twitter:image" content="<%= guild.iconURL %>">
+
+      <meta property="og:url" content="https://bumper-premium.glitch.me/server/<%= guild.id %>">
+      <meta property="og:image" content="<%= guild.iconURL %>">
+      <meta property="og:description" content="<%= description %>">
+      <meta property="og:title" content="<%= guild.name %>">
+      <meta property="og:site_name" content="Discord Servers">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="/server.css">
+  
+      <link rel='stylesheet' type="text/css" href='/servers/css/auto.main.lite.css?20170211' />
+      <link rel='stylesheet' type="text/css" href='/servers/css/hover.css' />
+     <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" /> -->
+
+  </head>
+  
+<%- include('./blocks/nav-bar.ejs', {bot,user}) %>
+  
+<style>
+  
+text {
+  color: <%= hexCode %>
+}
+  
+<% if(background) { %> 
+html, body {
+	background: <%=background%>;
+}
+<% } else { %>
+ html, body {
+	background: #1c1d26;
+}
+<% }; %>
+  
+.emoteCase {
+ height:32px;
+ width:32px;
+ display:block;
+ float:left;
+ position:relative;
+ margin:2px;
+ overflow:hidden;
+}
+  
+.emoteCase .emote {
+ position:absolute;
+ left:0;right:0;top:0;bottom:0;
+ margin:auto;
+ max-width:32px;
+ max-height:32px;
+}
+  
+.emoteCase .gifEmote {
+ display:none;
+}
+  
+.emoteCase:hover .emote{
+ display:none;
+}
+  
+.emoteCase:hover .gifEmote{
+ display:block;
+}
+  
+.titleandvote .votebutton {
+ background:#43b581;
+}
+
+  
+</style>
+  
+<br><br><br>
+     
+    <div class="container is-widescreen">
+     <div style="width:100%;text-align:center;margin-bottom: 30px; margin-top: 15px;">
+       <div id="waldo-tag-3823"></div>
+     </div>
+      <div class="titleandvote">
+        
+          <p style="text-align: center;">
+            <h1 style="font-weight:bold"><%=guild.name%></h1>
+          </p>
+          
+          
+            <a target="_blank" href="<%=invite%>"
+              rel="nofollow">
+              <span class="votebutton btn btn-orange btn-2x" style="cursor: pointer!important;">Join Server</span>
+            </a>
+      
+           <a target="_blank" href="https://bumperbot.ml/server/<%=guild.id%>"
+              rel="nofollow">
+              <span class="votebutton btn btn-orange btn-2x" style="cursor: pointer!important;">View Server</span>
+            </a>
+          
+      </div>
+    </div>
+    <div id="details" class="guildPageThing">
+      <div class="container is-widescreen">
+        <div class="columns is-tablet is-desktop">
+          <div class="column is-4-tablet is-3-desktop is-offset-4-tablet is-offset-1-desktop" id="bot-img">
+            <div class="bot-img "><img style="background-color: transparent;" src="<%=guild.iconURL%>"></div>
+          </div>
+          <div class="column is-10-mobile is-two-thirds-tablet is-4-desktop is-offset-2-tablet is-offset-1-mobile is-offset-1-desktop" id="bot-info">
+            <p class="is-flex nameAndVoteThing">
+              <span class="bot-name">
+                <%=guild.name%>
+              </span>
+            </p>
+            <p class="bot-description">
+              
+                <%-description%>
+              
+            </p>
+            <p class="bot-btns">
+              
+               <!-- <a class="botpagebutton" rel="nofollow" target="_blank" href="https://koala.glitch.me/" id="websitelink">Visit website
+              
+              
+                <a class="botpagebutton" id="edit" href="/servers/453600107191861271/edit">Edit</a>
+                <a class="botpagebutton" id="delete" href="/servers/453600107191861271/delete">Delete</a>-->
+              
+            </p>
+          </div>
+          <div class="column is-10-mobile is-two-thirds-tablet is-4-desktop is-offset-2-tablet is-offset-1-mobile is-offset-1-desktop" id="bot-stats">
+            <p class="is-flex btns">
+              
+                <span class="servers btn btn-orange btn-2x"><%=guild.memberCount%> members</span>
+              
+              
+                <span class="servers btn btn-orange btn-2x">Upvotes <%=bumps%></span>
+              
+            </p>
+            <p class="btns" id="tags">
+              
+              
+            </p>
+            <p class="btns" id="tags">
+              <% guild.emojis.forEach(emoji => { %>
+                <span class="emoteCase"><img class="emote" src="https://cdn.discordapp.com/emojis/<%= emoji.id %>.png"/><img class="gifEmote" src="https://cdn.discordapp.com/emojis/<%= emoji.id %>.emoji"/></span>
+              <% }); %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container is-widescreen">
+      <div class="owners">
+        <p id="createdby">
+          
+          
+          
+          
+        </p>
+      </div>
+    </div>
+
+  
+  
+</html>
