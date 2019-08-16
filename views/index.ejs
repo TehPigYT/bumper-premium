@@ -1,0 +1,27 @@
+<%- include('./blocks/header.ejs', {bot,user}) %>
+
+<body onload="typeWriter()" style="margin:0;">
+
+<center><h1>
+  Hello! Welcome to the Bumper Premium Website!!
+</h1>
+  <br>
+  
+<%if(user) {%>
+    <h1 id="demo"></h1>
+<script> 
+var i = 0;
+var txt = 'Hi <%= user.username %>#<%= user. discriminator %>'; /* The text */
+var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}</script>
+    
+  <% } %>
+</center>
+</body>

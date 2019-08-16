@@ -1,0 +1,75 @@
+<%- include('./blocks/header.ejs', {bot,user}) %>
+<link rel="stylesheet" href="/card.css">
+<br>
+<div class="container"> 
+         <div class="row text-center card-deck">
+      <div class="card-columns">
+        
+      <% for(var i=0; i < Data.length; i++) { %>                        
+      
+      <div class="card mt-5" style="width: 18rem;">
+        <img class="card-img-top" src="<%= Data[i].iconURL %>">
+        <div class="card-body" style="margin-left: 0px !important;">
+          <h6 class="card-title text-center">
+            <br><br>
+           <%= Data[i].name %>
+          </h6>
+          <center> <div class="tags">
+                
+        <div class="badge pB" style="background-color: green"  id="presenceBadge" ><botStatus>Online:  <%=Data[i].online%> </botStatus></div> 
+             <span class="badge badge-info">Users: <y><%= Data[i].members %></y></span>
+            
+           </div></center>
+          <hr>
+         <center> 
+          <a href="/server/<%= Data[i].id %>" class="btn btn-primary">View</a>
+          <%
+            let enabled;
+            let disabled;
+            if(Data[i].invite === "gg") { enabled = false } else { enabled = true }
+           %>
+          <a href="<%= Data[i].invite %>" class="btn btn-primary<% if(!enabled) { %> disabled<% } %>">Invite</a>
+          </center>
+        </div>
+      </div>
+          <% } %>
+           </div></div></div>
+
+<style>
+   	.card {
+		   transition: 300ms ease;
+       text-allign: center;
+		   width: 12rem;
+       color: #000000;
+		   margin-left: 1rem; 
+		   margin-bottom: 1rem; 
+        box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+		  
+		}
+        
+    .card-img-top {
+    width: 50%;
+    position: fixed;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    }
+		
+	
+    .card-img-top {
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: -30px;
+    width: 50%;
+    position: unset;
+      
+}
+		
+    
+    h5 {
+  margin: 0;
+  padding: 0;
+  color: #7289da;
+  font-size: 20px;
+  font-weight: normal; }
+</style>

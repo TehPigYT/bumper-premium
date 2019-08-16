@@ -1,0 +1,41 @@
+<body>  
+    <center>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+   <a class="navbar-brand" href="/"><img src="<%= bot.user.avatarURL %>" width="30" height="30" class="d-inline-block align-top rounded-circle" alt=""> Bumper</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup"><div class="navbar-nav"></div></div>
+        <ul class="navbar-nav">
+          <!-- <li class="nav-item"><a class="nav-link" href="/">Home</a></li>-->
+           <li class="nav-item"><a class="nav-link" href="https://discord.gg/NmNB7CK">Server</a></li>
+            <li class="nav-item"><a class="nav-link" href="/"> N/A</a></li>
+          <li class="nav-item"><a class="nav-link" href="/servers">Servers <span class="badge badge-secondary" id="botNum"><%=bot.guilds.size%></span></a></li>
+          
+            <% if(user) { %>
+              <li class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= user.username %>#<%= user.discriminator %></a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <h6 class="dropdown-header"><i class="fa fa-user" aria-hidden="true"></i> <%= user.username %></h6>
+                  <a class="dropdown-item" href="/user/<%= user.id%>"><i class="fa fa-user-o" aria-hidden="true"></i> Profile</a>
+                  <a class="dropdown-item" href="/me"><i class="fa fa-cogs" aria-hidden="true"></i> YourServerss</a>
+                  <a class="dropdown-item" href="/"><i class="fa fa-cogs" aria-hidden="true"></i> N/A</a>
+                  <% 
+                  let Developers = [ '338192747754160138' ];
+                  let Staff = []
+                  if(Developers.includes(user.id)) { %> 
+                    <a class="dropdown-item" href="/admin"><i class="fa fa-key"></i> Admin</a>
+                  <% } %>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                </div>
+              </li>
+            <% } else { %>
+              <li class="nav-item"><a href="/login" class="nav-link"><i class="fa fa-key" aria-hidden="true"></i> Login</a></li>
+            <% } %>
+          </ul>
+      </div>
+    </nav>
+  </center>
+</body>

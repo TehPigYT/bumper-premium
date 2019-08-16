@@ -1,0 +1,35 @@
+
+.jumbotron {
+  background-color: #2C2F33;
+}
+
+.navbar {
+  background-color: #7289DA;
+}
+
+h1{
+  font-size:25px;
+  color: #8f78a7;
+}
+
+h6{
+  color: #8f78a7;
+}
+
+hr {
+  background-color: #dbdbdb;
+  border: none;
+  display: block;
+  height: 1px;
+  margin: 1.5rem 0;
+}
+
+input{
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.bot-img img {
+    background-color:#2f3136 !important;
+}
+
+.bot-description{color:black!important}.bot-card .medalSponsor .bot-name{margin-bottom:4px}

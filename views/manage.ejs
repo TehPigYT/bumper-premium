@@ -1,0 +1,133 @@
+<%- include('./blocks/header.ejs', {bot,user}) %>
+
+<div class="py-5 text-center filter-dark"  style="background-image: url('https://cdn.discordapp.com/icons/521461252317249537/a6fdef19571d5ca8bc9e26810072b803.png?size=128');background-size:cover;background-repeat:no-repeat;">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="d-lg-none"></div>
+<center>
+  <% if (guild.icon) { %>
+   <img class="img-fluid d-block rounded-circle mx-auto" src="<%= `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png?size=128`; %>" alt="" data-toggle="tooltip" data-placement="top" title="<%= guild.name %>">
+  <% } else { %>
+  <img class="d-flex mr-3 rounded-circle" src="https://i.imgur.com/2otMem9.png" style="width: 140px;" alt="">
+<% } %>
+<h4><%= guild.name %></h4>
+<h6>You can change the prefix and more here.</h6>
+</center>
+</div>
+</div>
+</div>
+</div>
+<div class="py-5 bg-light">
+<div class="container">
+<div class="row">
+
+  <!--Cards-->
+<div class="col-md-6">
+<div class="card">
+<div class="card-body">
+
+<form method="post" >
+<h4>Prefix</h4>
+<h6 class="text-muted">Change the prefix of the guild.</h6>
+<div class="form-group">
+<input type="text" name="prefix" maxlength="6" class="form-control" placeholder="Enter here a prefix.." value="<%= prefix %>">
+</div>
+</div>
+</div>
+</div>
+</form>
+  <br>
+<div class="col-md-6">
+<div class="card">
+<div class="card-body">
+
+<form method="post" >
+<h4>Hex Code</h4>
+<h6 class="text-muted">Change the partner embed color.</h6>
+<div class="form-group">
+<input type="text" name="hex" maxlength="7" class="form-control" placeholder="#8f78a7" value="<%= hexCode %>">
+</div>
+</div>
+</div>
+</div>
+</form>
+  <br>
+<div class="col-md-6">
+<div class="card">
+<div class="card-body">
+
+<form method="post" >
+<h4>Description</h4>
+<h6 class="text-muted">Change the guilds description.</h6>
+<div class="form-group">
+<input type="text" name="description" maxlength="200" class="form-control" placeholder="Enter a description..." value="<%= description %>">
+</div>
+</div>
+</div>
+</div>
+</form>
+  <br>
+<div class="col-md-6">
+<div class="card">
+<div class="card-body">
+
+<form method="post" >
+<h4>Banner</h4>
+<h6 class="text-muted">(Optional)</h6>
+<div class="form-group">
+<input type="text" name="banner" maxlength="50" class="form-control" placeholder="#8f78a7" value="<%= banner %>">
+</div>
+</div>
+</div>
+</div>
+</form>
+  
+<br><br>
+<center><button type="submit" class="btn btn-primary text-white">Submit</button></center>
+<a href="/me/configure/<%=guild.id%>/leave" class="btn btn-primary">Leave</a>
+</div>
+</div>
+</div>
+
+<!-- class="py-5 bg-light">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-body">
+<h4>Prefix</h4>
+<h6 class="text-muted">Change the prefix of the guild.</h6>
+<form method="post" action="https://pizzabot.xyz/guilds/configure/453600107191861271/prefix">
+<div class="form-group">
+<input type="text" name="prefix" maxlength="6" class="form-control" placeholder="Enter here a prefix.." value="!">
+</div>
+<button type="submit" class="btn btn-primary text-white">Submit</button>
+</form>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-body">
+<h4>Order Channel</h4>
+<h6 class="text-muted">You can restrict the use of the !order command by setting up an order channel.<br /><br />Remember, the bot only shows the channels that allows the bot to: Embed Links, Send Messages, Read Messages. Make sure that the @everyone role has the send messages & read message perm on the target channel.</h6>
+<form method="post" action="https://pizzabot.xyz/guilds/configure/453600107191861271/channel">
+<div class="form-group">
+<select class="form-control" name="channel">
+<option value="None">-- None</option>
+<option value="562078019968040960">#polls</option>
+<option value="564169118744576031">#count-to-2000</option>
+<option value="501934547131301888">#files</option>
+<option value="525799694241103882">#bug-suggestion</option>
+<option value="464581849189187584" selected>#public-testing</option>
+</select>
+</div>
+<button type="submit" class="btn btn-primary text-white">Submit</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>-->

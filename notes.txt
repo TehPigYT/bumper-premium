@@ -1,0 +1,2 @@
+-- Error Notes --
+If issue with Disk / Memory, do git prune then git gc if not enough space then do rm -rf .git

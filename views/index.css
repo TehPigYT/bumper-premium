@@ -1,0 +1,45 @@
+html, body {
+	background: #1c1d26;
+}
+
+.jumbotron {
+  background-color: #2C2F33;
+}
+
+.navbar {
+  background-color: #7289DA;
+}
+/*nav{
+ position: fixed !important;
+        width: 100%;              
+}*/
+
+h1{
+  font-size:25px;
+  color: #8f78a7;
+}
+
+h6{
+  color: #8f78a7;
+}
+
+hr {
+  background-color: #dbdbdb;
+  border: none;
+  display: block;
+  height: 1px;
+  margin: 1.5rem 0;
+}
+
+input{
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+	
+  .discord-embed{z-index:10;font-size:2em}
+  .discord-embed>*{box-shadow:1px 1px 10px 1px rgba(0,0,0,.5)}
+  .discord-embed a{display:flex;border-radius:50%;position:fixed;top:1.5vw;left:1.5vw;width:1.5em;height:1.5em;background:#7289DA;transition:background .5s;cursor:pointer}
+  .discord-embed a:focus,.discord-embed a:hover{background:#2C2F33}
+  .discord-embed a i{vertical-align:middle;padding:.05em 0 0;margin:auto}
+  .discord-embed a i::before{line-height:1.5em}
+  .discord-embed iframe{position:fixed;top:calc(1.5vw * 2 + 1.5em);left:1.5vw;opacity:0;pointer-events:none;transition:opacity .5s}
+  .discord-embed iframe[visible]{opacity:1;pointer-events:auto}
